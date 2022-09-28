@@ -1,20 +1,35 @@
 {
-    "name": "PocketDictionary",
-    "version": "1.0",
-    "minimum_chrome_version": "35.0",
-    "manifest_version": 2,
+    "name": "Pocket Dictionary",
+    "description": "Chrome Extension for English definitions, synonyms, audio pronunciations and example sentences",
+    "author": "RattleDoge",
     "permissions": [
       "contextMenus"
     ],
+    "version": "1.0","host_permissions": [
+      "https://*/*"
+    ],
+    "manifest_version": 3,
     "background": {
-      "scripts": [
-        "background.js"
-      ]
+      "service_worker": "background.js"
     },
     "content_scripts": [
       {
-        "matches": ["https://*.google.com/*"],
-        "js": ["contentscript.js"]
+        "matches": ["https://*/*"],
+        "js": ["contentscript.js","background.js"]
       }
-    ]
+    ],
+    "icons": {
+      "16": "assets/icon.png",
+       "48": "assets/icon.png",
+      "128": "assets/icon.png"
+   },
+    "action": {
+      "default_icon": {
+        "16": "assets/icon.png",
+        "24": "assets/icon.png",
+        "32": "assets/icon.png"
+      },
+      "default_title": "I am working",
+      "default_popup": "assets/popup.html"
+    }
   }

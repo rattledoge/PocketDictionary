@@ -7,20 +7,25 @@ let audio;
 function data(result){
     wrapper.classList.add("active");
     let definitions = result[0].meanings[0].definitions[0];
-
+    console.log(result);
     var phonetics = result[0].phonetics;
     for(var k in phonetics) {
         if(phonetics[k].text != undefined){
             phontetics = `${result[0].meanings[0].partOfSpeech}  /${result[0].phonetics[k].text}/`;
             break;
         }
-        console.log("text undi");
     };
     
     document.querySelector(".word p").innerText = result[0].word;
     document.querySelector(".word span").innerText = phontetics;
     document.querySelector(".meaning span").innerText = definitions.definition;
-    document.querySelector(".example span").innerText = definitions.example;
+
+    if(definitions.example != undefined){
+        document.querySelector(".example span").innerText = definitions.example;
+    }
+    else{
+        document.querySelector(".example span").innerText = "Can't find 😞"
+    }
 
     for(var k in phonetics) {
         if(phonetics[k].audio != ''){
@@ -35,9 +40,8 @@ function data(result){
     }else{
         synonyms.parentElement.style.display = "block";
         synonyms.innerHTML = "";
-        for (let i = 0; i < 5; i++) {
-            let tag = `<span onclick="search('${definitions.synonyms[i]}')">${definitions.synonyms[i]},</span>`;
-            tag = i == 4 ? tag = `<span onclick="search('${definitions.synonyms[i]}')">${definitions.synonyms[4]}</span>` : tag;
+        for (var k in definitions.synonyms) {
+            let tag = `<span onclick="searchFromSynonym('${definitions.synonyms[k]}')">${definitions.synonyms[k]},</span>`;
             synonyms.insertAdjacentHTML("beforeend", tag);
         }
     }
@@ -49,6 +53,10 @@ function fetchApi(word){
     fetch(url).then(response => response.json()).then(result => data(result)).catch(() =>{
         alert(`Can't find the meaning of "${word}". Please, try to search for another word.`);
     });
+}
+
+function searchFromSynonym(word){
+    fetchApi(word);
 }
 
 function getURLParameter()
