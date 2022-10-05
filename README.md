@@ -12,3 +12,7 @@ Pocket Dictionary is a Chrome Extension for English definitions, synonyms, audio
 ## Screenshots
 
 Will be added soon..
+
+## How-To
+
+Will be added soon..
