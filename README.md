@@ -11,8 +11,11 @@ Pocket Dictionary is a Chrome Extension for English definitions, synonyms, audio
 
 ## Screenshots
 
-Will be added soon..
+<img src="Screenshots/howto.png" width=386 height=380>
+<img src="Screenshots/main.png" width=464 height=663>
 
 ## How-To
 
-Will be added soon..
+-Highlight the text that you'd like to learn more informatins about then right click.
+-Click the PocketDictionary: "{word}" button in context menu.
+-Voila.
