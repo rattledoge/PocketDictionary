@@ -16,6 +16,6 @@ Pocket Dictionary is a Chrome Extension for English definitions, synonyms, audio
 
 ## How-To
 
--Highlight the text that you'd like to learn more informatins about then right click.
--Click the PocketDictionary: "{word}" button in context menu.
+-Highlight the text that you'd like to learn more informatins about then right click. <br/>
+-Click the PocketDictionary: "{word}" button in context menu. <br/>
 -Voila.
