@@ -12,5 +12,5 @@ function PopupWindowCenter(url, title, w, h) {
 
 chrome.contextMenus.onClicked.addListener((clickData) => {
     const inputString = clickData.selectionText
-    chrome.windows.create({url: "https://rattledoge.github.io/PocketDictionary/?word="+inputString, type: "popup", width: 480, height: 700,});
+    chrome.windows.create({url: "https://velikaansarikaya.github.io/PocketDictionary/?word="+inputString, type: "popup", width: 480, height: 700,});
 });
